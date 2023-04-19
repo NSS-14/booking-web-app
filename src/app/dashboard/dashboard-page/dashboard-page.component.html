@@ -1,0 +1,64 @@
+<div class="top-container">
+  <div class="boat-image"></div>
+  <div class="boat-image-elements-container">
+    <div class="secondary-title">DISCOVER THE COLORFUL WORLD</div>
+    <div class="main-title">{{ mainTitle }}</div>
+    <div class="horizontal-border"></div>
+    <div class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />sed do
+      eiusmod tempor incididunt ut labore.
+    </div>
+    <button class="discover-now-button" mat-flat-button color="accent">
+      <div class="discover-now-button-content">DISCOVER NOW</div>
+    </button>
+  </div>
+  <a
+    class="router-to-all-destinations"
+    mat-button
+    routerLink="ok"
+    color="accent"
+  >
+    <div class="router-to-all-destinations-content">
+      Search & Book all our destinations
+    </div>
+  </a>
+  <div class="search-bar-container">
+    <input
+      class="city-input"
+      id="search-bar"
+      nz-input
+      placeholder="Select your city"
+      [(ngModel)]="typedCity"
+    />
+    <ul class="search-results"></ul>
+  </div>
+  <div class="second-main-title">OUR SERVICES</div>
+  <div class="second-horizontal-border"></div>
+  <div class="service-presentations-container">
+    <app-service-presentation
+      *ngFor="let servicePresentation of arrayOfServicePresentations"
+      [servicePresentation]="servicePresentation"
+    ></app-service-presentation>
+  </div>
+  <div class="most-popular-container">
+    <div class="most-popular-second-container">
+      <div class="arrows-container">
+        <button nz-button nzType="text" (click)="previousPage()">
+          <i nz-icon nzType="left" nzTheme="outline"></i>
+        </button>
+        <button nz-button nzType="text" (click)="nextPage()">
+          <i nz-icon nzType="right" nzTheme="outline"></i>
+        </button>
+      </div>
+      <div class="third-main-title">MOST POPULAR</div>
+      <div class="third-horizontal-border"></div>
+      <div class="place-cards-container">
+        <app-place-card
+          *ngFor="let placeCard of arrayOfPlaceCards"
+          [placeCard]="placeCard"
+          (placeCardEmmiter)="setMainTitle($event)"
+        ></app-place-card>
+      </div>
+    </div>
+  </div>
+</div>

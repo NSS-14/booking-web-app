@@ -1,0 +1,15 @@
+<div class="main-container">
+  <img class="image" [src]="placeCard.imageUrl" />
+  <div class="secondary-container">
+    <div class="title">{{ placeCard.title }}</div>
+    <div class="description">{{ placeCard.description }}</div>
+    <button
+      class="visit-now-button"
+      mat-flat-button
+      color="accent"
+      (click)="visitNowClick()"
+    >
+      <div class="visit-now-button-content">VISIT NOW</div>
+    </button>
+  </div>
+</div>
